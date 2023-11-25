@@ -7,14 +7,51 @@
 body{
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    flex-direction: column;    
+    background: linear-gradient(270deg, #22c6e1, #0755d7, #1507d7, #a807d7, #e80fba);
+    background-size: 1000% 1000%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.tittle{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    background: rgba(248, 249, 252, 0.596);
+    border-radius: 10px;
 }
 
 .memory-game{
-    width: 610px;
-    height: 610px;
+    width: 650px;
+    height: 650px;
     margin: auto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     perspective: 1000px;
 }
@@ -22,7 +59,7 @@ body{
 .memory-card{
     width: calc(18% - 10px);
     height: calc(20% - 10px);
-    margin: 3px;
+    margin: 2px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transform: scale(1);
@@ -40,13 +77,20 @@ body{
 .front-face, .back-face{
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 3px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: #1c1fcc;
     backface-visibility: hidden;
 }
 
 .front-face{
     transform: rotateY(180deg);
+}
+
+@media (max-width: 644px){
+
+    .menu{
+        visibility: hidden;
+    }
 }
